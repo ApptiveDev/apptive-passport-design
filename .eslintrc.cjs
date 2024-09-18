@@ -6,6 +6,7 @@ module.exports = {
   'extends': [
     'airbnb', 'airbnb/hooks', 'airbnb-typescript'
   ],
+  'ignorePatterns': ['node_modules/', 'dist/', '*.cjs', '*.mjs', '*.config.ts'],
   'overrides': [
     {
       'env': {
@@ -30,21 +31,39 @@ module.exports = {
     'react',
   ],
   'rules': {
-    'indent': [
-      'error',
-      4,
-    ],
     'linebreak-style': [
       'error',
       'windows',
     ],
-    'quotes': [
+    'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/alt-text': 'off',
+    'react/no-unknown-property': ['error', { 'ignore': ['css'] }],
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
+    'import/extensions': [
       'error',
-      'single',
+      'ignorePackages',
+      {
+        '': 'never',
+        'js': 'never',
+        'jsx': 'never',
+        'ts': 'never',
+        'tsx': 'never'
+      }
     ],
-    'semi': [
+    'padding-line-between-statements': [
       'error',
-      'always',
+      { blankLine: 'always', prev: '*', next: ['if', 'for', 'while', 'switch', 'export', 'class', 'function'] },
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: ['if', 'for', 'while', 'switch', 'export', 'class', 'function'], next: '*' },
+
+      { blankLine: 'always', prev: 'import', next: '*' },
+      { blankLine: 'never', prev: 'import', next: 'import' },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: ['**/mock/*', '**/*.test.*'] },
+    ],
+    '@typescript-eslint/no-use-before-define': 'off'
   },
 };
