@@ -32,7 +32,7 @@ export const Default: Story = {
 export const WithIcon: Story = {
   args: {
     theme: 'dark',
-    children: 'Button with Icon',
+    children: 'Dark Button',
   },
 };
 
