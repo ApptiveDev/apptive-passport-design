@@ -11,7 +11,7 @@ function buttonStyle(theme: ButtonTheme) {
       outline: none;
       padding: 10px 18px;
       border-radius: 100px;
-      color:  ${theme === 'dark' ? colors.light.primary.main : colors.light.text.prominent};
+      color: ${theme === 'dark' ? colors.light.primary.main : colors.light.text.prominent};
       border: ${getBorderStyle(theme)};
       background-color: ${getBackgroundColor(theme)};
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -44,7 +44,7 @@ function getBorderStyle(theme: ButtonTheme) {
 
   const baseStyle = '1px solid ';
 
-  return baseStyle + (theme === 'dark' ? colors.light.primary.main : colors.light.text.subtle);
+  return baseStyle + (theme === 'dark' ? 'transparent' : colors.light.text.subtle);
 }
 
 function getHoverBackgroundColor(theme: ButtonTheme) {
@@ -72,7 +72,7 @@ function getHoverBorderColor(theme: ButtonTheme) {
     return colors.light.absolute.black;
   }
 
-  return theme === 'dark' ? colors.light.primary.main : colors.light.text.prominent;
+  return theme === 'dark' ? colors.light.primary.main : colors.light.border.prominent;
 }
 
 export {
