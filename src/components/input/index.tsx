@@ -14,7 +14,6 @@ import toggleHideIcon from '@assets/icons/eye-off.svg';
 import { generateRandomId } from '@/utils';
 
 interface PasswordInputProps extends HTMLAttributes<HTMLInputElement> {
-  value: string;
   iconSrc?: string;
   enableToggleShow?: boolean;
   type: HTMLInputTypeAttribute;
@@ -23,7 +22,7 @@ interface PasswordInputProps extends HTMLAttributes<HTMLInputElement> {
 }
 
 function Input({
-  value, iconSrc, enableToggleShow, type, label, css, ...rest
+  iconSrc, enableToggleShow, type, label, css, ...rest
 }: PasswordInputProps) {
   const inputId = useRef(generateRandomId());
   const [isHidden, setIsHidden] = useState(true);
