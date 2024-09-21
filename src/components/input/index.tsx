@@ -1,5 +1,5 @@
 import {
-  ChangeEvent, Dispatch,
+  Dispatch,
   HTMLAttributes,
   HTMLInputTypeAttribute, SetStateAction, useRef, useState,
 } from 'react';
@@ -15,7 +15,6 @@ import { generateRandomId } from '@/utils';
 
 interface PasswordInputProps extends HTMLAttributes<HTMLInputElement> {
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   iconSrc?: string;
   enableToggleShow?: boolean;
   type: HTMLInputTypeAttribute;
@@ -24,7 +23,7 @@ interface PasswordInputProps extends HTMLAttributes<HTMLInputElement> {
 }
 
 function Input({
-  value, onChange, iconSrc, enableToggleShow, type, label, css, ...rest
+  value, iconSrc, enableToggleShow, type, label, css, ...rest
 }: PasswordInputProps) {
   const inputId = useRef(generateRandomId());
   const [isHidden, setIsHidden] = useState(true);
@@ -53,7 +52,6 @@ function Input({
         <input
           id={inputId.current}
           value={value}
-          onChange={onChange}
           css={[inputStyle(iconSrc, enableToggleShow), css]}
           type={type === 'password' && isHidden
             ? 'password'
