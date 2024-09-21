@@ -1,7 +1,10 @@
 import {
   Dispatch,
   HTMLAttributes,
-  HTMLInputTypeAttribute, SetStateAction, useRef, useState,
+  HTMLInputTypeAttribute,
+  SetStateAction,
+  useRef,
+  useState,
 } from 'react';
 import { CSSObject } from '@emotion/react';
 import {
@@ -50,7 +53,6 @@ function Input({
         }
         <input
           id={inputId.current}
-          value={value}
           css={[inputStyle(iconSrc, enableToggleShow), css]}
           type={type === 'password' && isHidden
             ? 'password'
