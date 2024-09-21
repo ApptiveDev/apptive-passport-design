@@ -1,9 +1,15 @@
 import { buttonStyle } from '@components/button/styles';
-import { forwardRef } from 'react';
-import { ButtonProps } from '@/types/props';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
+import { CSSObject } from '@emotion/react';
+import { ButtonTheme } from '@/types';
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  css?: CSSObject;
+  theme?: ButtonTheme;
+}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
-  iconSrc, children, theme = 'light', css, ...rest
+  children, theme = 'light', css, ...rest
 }: ButtonProps, ref) => (
   <button
     css={[buttonStyle(theme), css]}
