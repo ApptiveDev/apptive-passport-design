@@ -1,6 +1,6 @@
 import colors from '@styles/colors';
 import { css } from '@emotion/react';
-import { ButtonTheme } from '@/types/props';
+import { ButtonTheme } from '@/types';
 
 function buttonStyle(theme: ButtonTheme) {
   return (
