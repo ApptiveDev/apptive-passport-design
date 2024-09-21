@@ -37,7 +37,11 @@ function Input({
     <>
       {
         label
-          ? <label htmlFor={inputId.current} css={labelStyle}>{label}</label>
+          ? (
+            <label htmlFor={inputId.current} css={labelStyle}>
+              <p>{label}</p>
+            </label>
+          )
           : null
       }
       <div css={inputContainerStyle}>

@@ -39,9 +39,12 @@ const inputContainerStyle = css`
 `;
 
 const labelStyle = css`
-  margin: 0;
   font-size: 13px;
   color: ${colors.light.text.moderate};
+  & p {
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
 `;
 
 export {
