@@ -2,10 +2,10 @@ import { css, CSSObject } from '@emotion/react';
 import corner from '@styles/corner';
 import colors from '@styles/colors';
 
-function inputStyle(iconSrc?: string, enableToggleShow?: boolean): CSSObject {
+function inputStyle(hasIcon?: boolean, enableToggleShow?: boolean): CSSObject {
   return (
     css`
-      padding: 10px ${enableToggleShow ? '34px' : '10px'} 10px ${iconSrc ? '34px' : '10px'};
+      padding: 10px ${enableToggleShow ? '34px' : '10px'} 10px ${hasIcon ? '34px' : '10px'};
       border-radius: ${corner.small};
       border: 1px solid ${colors.light.border.subtle};
       width: 100%;
@@ -20,7 +20,7 @@ function inputStyle(iconSrc?: string, enableToggleShow?: boolean): CSSObject {
   );
 }
 
-function iconStyle(isToggleShowIcon?: boolean) {
+function inputIconStyle(isToggleShowIcon?: boolean) {
   return (
     css`
       position: absolute;
@@ -48,7 +48,7 @@ const labelStyle = css`
 `;
 
 export {
-  iconStyle,
+  inputIconStyle,
   inputStyle,
   labelStyle,
   inputContainerStyle,

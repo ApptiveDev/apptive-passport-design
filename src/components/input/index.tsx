@@ -2,13 +2,14 @@ import {
   Dispatch,
   HTMLAttributes,
   HTMLInputTypeAttribute,
+  ReactNode,
   SetStateAction,
   useRef,
   useState,
 } from 'react';
 import { CSSObject } from '@emotion/react';
 import {
-  iconStyle,
+  inputIconStyle,
   inputContainerStyle,
   inputStyle, labelStyle,
 } from '@components/input/styles';
@@ -16,8 +17,8 @@ import toggleShowIcon from '@assets/icons/eye.svg';
 import toggleHideIcon from '@assets/icons/eye-off.svg';
 import { generateRandomId } from '@/utils';
 
-interface PasswordInputProps extends HTMLAttributes<HTMLInputElement> {
-  iconSrc?: string;
+interface InputProps extends HTMLAttributes<HTMLInputElement> {
+  icon?: string | ReactNode;
   enableToggleShow?: boolean;
   type: HTMLInputTypeAttribute;
   label?: string;
@@ -25,8 +26,8 @@ interface PasswordInputProps extends HTMLAttributes<HTMLInputElement> {
 }
 
 function Input({
-  iconSrc, enableToggleShow, type, label, css, ...rest
-}: PasswordInputProps) {
+  icon, enableToggleShow, type, label, css, ...rest
+}: InputProps) {
   const inputId = useRef(generateRandomId());
   const [isHidden, setIsHidden] = useState(true);
 
@@ -46,14 +47,10 @@ function Input({
           : null
       }
       <div css={inputContainerStyle}>
-        {
-          iconSrc
-            ? <img src={iconSrc} alt="input icon" css={iconStyle()} />
-            : null
-        }
+        <InputIcon icon={icon} />
         <input
           id={inputId.current}
-          css={[inputStyle(iconSrc, enableToggleShow), css]}
+          css={[inputStyle(!!icon, enableToggleShow), css]}
           type={type === 'password' && isHidden
             ? 'password'
             : 'text'}
@@ -82,11 +79,23 @@ function ToggleVisibilityIcon({
     <img
       src={isHidden ? toggleShowIcon : toggleHideIcon}
       alt="toggle show"
-      css={iconStyle(true)}
+      css={inputIconStyle(true)}
       onClick={() => setIsHidden((prevState: boolean) => !prevState)}
       role="presentation"
     />
   );
+}
+
+function InputIcon({ icon }: Partial<InputProps>) {
+  if (!icon) {
+    return null;
+  }
+
+  if (typeof icon === 'string') {
+    return <img src={icon} alt="input icon" css={inputIconStyle()} />;
+  }
+
+  return icon;
 }
 
 export default Input;
