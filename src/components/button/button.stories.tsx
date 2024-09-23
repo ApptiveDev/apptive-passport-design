@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from '@components/button';
+import icon from '@assets/icons/eye.svg';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -33,6 +34,7 @@ export const WithIcon: Story = {
   args: {
     theme: 'dark',
     children: 'Dark Button',
+    icon,
   },
 };
 
