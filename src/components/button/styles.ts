@@ -25,6 +25,12 @@ function buttonStyle(theme: ButtonTheme) {
   `);
 }
 
+const buttonIconStyle = css`
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+`;
+
 function getBackgroundColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
     return 'transparent';
@@ -77,6 +83,7 @@ function getHoverBorderColor(theme: ButtonTheme) {
 
 export {
   buttonStyle,
+  buttonIconStyle,
   getBorderStyle,
   getHoverBackgroundColor,
   getHoverColor,
