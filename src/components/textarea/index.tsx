@@ -1,4 +1,5 @@
 import {
+  forwardRef,
   HTMLAttributes,
   useRef,
 } from 'react';
@@ -14,9 +15,9 @@ interface TextareaProps extends HTMLAttributes<HTMLTextAreaElement> {
   maxLength?: number;
 }
 
-function TextArea({
+const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   onChange, label, css, rows = 4, cols = 50, maxLength, ...rest
-}: TextareaProps) {
+}, ref) => {
   const textareaId = useRef(generateRandomId());
 
   return (
@@ -36,10 +37,11 @@ function TextArea({
         rows={rows}
         cols={cols}
         maxLength={maxLength}
+        ref={ref}
         {...rest}
       />
     </>
   );
-}
+});
 
 export default TextArea;

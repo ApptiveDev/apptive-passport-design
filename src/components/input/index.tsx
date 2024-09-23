@@ -1,5 +1,5 @@
 import {
-  Dispatch,
+  Dispatch, forwardRef,
   HTMLAttributes,
   HTMLInputTypeAttribute,
   ReactNode,
@@ -27,9 +27,9 @@ interface InputProps extends HTMLAttributes<HTMLInputElement> {
   css?: CSSObject;
 }
 
-function Input({
+const Input = forwardRef<HTMLInputElement, InputProps>(({
   icon, enableToggleShow, type, label, css, ...rest
-}: InputProps) {
+}, ref) => {
   const inputId = useRef(generateRandomId());
   const [isHidden, setIsHidden] = useState(true);
 
@@ -56,17 +56,18 @@ function Input({
           type={type === 'password' && isHidden
             ? 'password'
             : 'text'}
+          ref={ref}
           {...rest}
         />
         {
-        enableToggleShow
-          ? <ToggleVisibilityIcon isHidden={isHidden} setIsHidden={setIsHidden} />
-          : null
-      }
+          enableToggleShow
+            ? <ToggleVisibilityIcon isHidden={isHidden} setIsHidden={setIsHidden} />
+            : null
+        }
       </div>
     </>
   );
-}
+});
 
 interface ToggleVisibilityIconProps {
   isHidden: boolean;
