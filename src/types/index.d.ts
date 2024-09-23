@@ -1,1 +1,3 @@
-export type ButtonTheme = 'dark' | 'light' | 'light-outlined';
+export type ButtonTheme = 'default' | 'dark' | 'light-outlined';
+
+export type TagTheme = 'default' | 'primary';
