@@ -9,12 +9,14 @@ import {
 } from 'react';
 import { CSSObject } from '@emotion/react';
 import {
-  inputIconStyle,
   inputContainerStyle,
-  inputStyle, labelStyle,
+  inputIconStyle,
+  inputStyle,
+  labelStyle,
 } from '@components/input/styles';
 import toggleShowIcon from '@assets/icons/eye.svg';
 import toggleHideIcon from '@assets/icons/eye-off.svg';
+import DynamicIcon from '@components/internal/dynamic-icon';
 import { generateRandomId } from '@/utils';
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
@@ -47,7 +49,7 @@ function Input({
           : null
       }
       <div css={inputContainerStyle}>
-        <InputIcon icon={icon} />
+        <DynamicIcon icon={icon} css={inputIconStyle()} />
         <input
           id={inputId.current}
           css={[inputStyle(!!icon, enableToggleShow), css]}
@@ -84,18 +86,6 @@ function ToggleVisibilityIcon({
       role="presentation"
     />
   );
-}
-
-function InputIcon({ icon }: Partial<InputProps>) {
-  if (!icon) {
-    return null;
-  }
-
-  if (typeof icon === 'string') {
-    return <img src={icon} alt="input icon" css={inputIconStyle()} />;
-  }
-
-  return icon;
 }
 
 export default Input;
