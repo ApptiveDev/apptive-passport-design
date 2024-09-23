@@ -11,7 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
-  children, theme = 'light', css, icon, ...rest
+  children, theme = 'default', css, icon, ...rest
 }: ButtonProps, ref) => (
   <button
     css={[buttonStyle(theme), css]}

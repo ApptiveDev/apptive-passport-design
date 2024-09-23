@@ -9,7 +9,7 @@ const meta: Meta<typeof Button> = {
 
     theme: {
       control: 'radio',
-      options: ['light', 'dark', 'light-outlined'],
+      options: ['default', 'dark', 'light-outlined'],
     },
     children: {
       control: 'text',
@@ -25,7 +25,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    theme: 'light',
+    theme: 'default',
     children: 'Default Button',
   },
 };
@@ -40,7 +40,7 @@ export const WithIcon: Story = {
 
 export const CustomStyled: Story = {
   args: {
-    theme: 'light',
+    theme: 'default',
     children: 'Custom Styled Button',
     css: {
       backgroundColor: 'lightblue',
