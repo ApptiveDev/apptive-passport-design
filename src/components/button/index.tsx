@@ -1,7 +1,7 @@
 import { buttonIconStyle, buttonStyle } from '@components/button/styles';
 import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react';
 import { CSSObject } from '@emotion/react';
-import DynamicIcon from '@components/internal/dynamic-icon';
+import _DynamicIcon from '@components/internal/_dynamic-icon';
 import { ButtonTheme } from '@/types';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,7 +19,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     ref={ref}
     {...rest}
   >
-    <DynamicIcon icon={icon} css={buttonIconStyle} />
+    <_DynamicIcon icon={icon} css={buttonIconStyle} />
     {children}
   </button>
 ));

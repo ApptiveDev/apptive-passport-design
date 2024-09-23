@@ -6,7 +6,7 @@ interface IconProps {
   css?: CSSObject;
 }
 
-function DynamicIcon({ icon, css }: IconProps) {
+function _dynamicIcon({ icon, css }: IconProps) {
   if (!icon) {
     return null;
   }
@@ -18,4 +18,4 @@ function DynamicIcon({ icon, css }: IconProps) {
   return icon;
 }
 
-export default DynamicIcon;
+export default _dynamicIcon;

@@ -5,7 +5,7 @@ import {
   tagIconStyle,
   tagStyle,
 } from '@components/tag/styles';
-import DynamicIcon from '@components/internal/dynamic-icon';
+import _DynamicIcon from '@components/internal/_dynamic-icon';
 import { CSSObject } from '@emotion/react';
 import CloseButton from '@assets/icons/x.svg?react';
 import colors from '@styles/colors';
@@ -30,7 +30,7 @@ function Tag({
   return (
     <div css={tagContainerStyle}>
       <div css={[tagStyle(!!enableClose, theme), css]}>
-        <DynamicIcon icon={icon} css={tagIconStyle} />
+        <_DynamicIcon icon={icon} css={tagIconStyle} />
         {children}
       </div>
       {
