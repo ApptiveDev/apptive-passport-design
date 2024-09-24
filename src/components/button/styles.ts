@@ -16,6 +16,7 @@ function buttonStyle(theme: ButtonTheme) {
       background-color: ${getBackgroundColor(theme)};
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
       cursor: pointer;
+      gap: 5px;
 
       &:hover {
         background-color: ${getHoverBackgroundColor(theme)};
@@ -26,7 +27,6 @@ function buttonStyle(theme: ButtonTheme) {
 }
 
 const buttonIconStyle = css`
-  margin-right: 10px;
   width: 16px;
   height: 16px;
 `;
