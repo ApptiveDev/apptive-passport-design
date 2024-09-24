@@ -16,7 +16,7 @@ import {
 } from '@components/input/styles';
 import toggleShowIcon from '@assets/icons/eye.svg';
 import toggleHideIcon from '@assets/icons/eye-off.svg';
-import _DynamicIcon from '@components/internal/_dynamic-icon';
+import DynamicIcon from '@components/internal/dynamic-icon';
 import { generateRandomId } from '@/utils';
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
@@ -49,7 +49,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
           : null
       }
       <div css={inputContainerStyle}>
-        <_DynamicIcon icon={icon} css={inputIconStyle()} />
+        <DynamicIcon icon={icon} css={inputIconStyle()} />
         <input
           id={inputId.current}
           css={[inputStyle(!!icon, enableToggleShow), css]}
