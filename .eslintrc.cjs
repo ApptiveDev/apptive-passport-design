@@ -31,10 +31,6 @@ module.exports = {
     'react',
   ],
   'rules': {
-    'linebreak-style': [
-      'error',
-      'windows',
-    ],
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/alt-text': 'off',
     'react/no-unknown-property': ['error', { 'ignore': ['css'] }],
