@@ -5,7 +5,7 @@ import {
   switchWrapperStyle,
 } from '@components/switch/styles';
 import { CSSObject } from '@emotion/react';
-import useSwitchHandler from '@hooks/useSwitchHandler';
+import useSwitchHandler from '@components/switch/useSwitchHandler';
 import { generateRandomId } from '@/utils';
 
 interface SwitchProps extends HTMLAttributes<HTMLInputElement> {
