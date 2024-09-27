@@ -51,7 +51,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       <div css={inputContainerStyle}>
         <DynamicIcon icon={icon} css={inputIconStyle()} />
         <input
-          id={inputId.current}
           css={[inputStyle(!!icon, enableToggleShow), css]}
           type={type === 'password' && isHidden
             ? 'password'

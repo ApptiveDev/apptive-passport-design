@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Tag from '@components/tag/index';
 import icon from '@assets/icons/tag.svg';
 import { css } from '@emotion/react';
-import colors from '@styles/colors';
+import colorTheme from '@styles/colors';
 
 const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
@@ -39,7 +39,7 @@ export const EnableCloseStyled: Story = {
     icon,
     enableClose: true,
     css: css`
-        background-color: ${colors.primary.passive};
+        background-color: ${colorTheme.primary.passive};
         border: none;
       `,
     onClose: () => { console.log('close'); },

@@ -8,7 +8,7 @@ import {
 import DynamicIcon from '@components/internal/dynamic-icon';
 import { CSSObject } from '@emotion/react';
 import CloseButton from '@assets/icons/x.svg?react';
-import colors from '@styles/colors';
+import colorTheme from '@styles/colors';
 import { TagTheme } from '@/types';
 
 interface TagProps {
@@ -37,7 +37,7 @@ function Tag({
         enableClose
         && (
           <div css={[closeIconContainerStyle(theme), css]} onClick={onClose} role="presentation">
-            <CloseButton stroke={theme === 'default' ? colors.text.moderate : colors.primary.main} />
+            <CloseButton stroke={theme === 'default' ? colorTheme.text.moderate : colorTheme.primary.main} />
           </div>
         )
       }
