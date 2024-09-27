@@ -7,14 +7,14 @@ function inputStyle(hasIcon?: boolean, enableToggleShow?: boolean): CSSObject {
     css`
       padding: 10px ${enableToggleShow ? '34px' : '10px'} 10px ${hasIcon ? '34px' : '10px'};
       border-radius: ${corner.small};
-      border: 1px solid ${colors.light.border.subtle};
+      border: 1px solid ${colors.border.subtle};
       width: 100%;
       box-sizing: border-box;
       font-size: 15px;
       
       &:focus {
         outline: none;
-        border: 1px solid ${colors.light.border.prominent}
+        border: 1px solid ${colors.border.prominent}
       }
     `
   );
@@ -40,7 +40,7 @@ const inputContainerStyle = css`
 
 const labelStyle = css`
   font-size: 13px;
-  color: ${colors.light.text.moderate};
+  color: ${colors.text.moderate};
   & p {
     margin-bottom: 5px;
     margin-top: 0;

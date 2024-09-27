@@ -11,7 +11,7 @@ function buttonStyle(theme: ButtonTheme) {
       outline: none;
       padding: 10px 18px;
       border-radius: 100px;
-      color: ${theme === 'dark' ? colors.light.primary.main : colors.light.text.prominent};
+      color: ${theme === 'dark' ? colors.primary.main : colors.text.prominent};
       border: ${getBorderStyle(theme)};
       background-color: ${getBackgroundColor(theme)};
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -37,48 +37,48 @@ function getBackgroundColor(theme: ButtonTheme) {
   }
 
   if (theme === 'dark') {
-    return colors.light.text.prominent;
+    return colors.text.prominent;
   }
 
-  return colors.light.background.main;
+  return colors.background.main;
 }
 
 function getBorderStyle(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return `2px solid ${colors.light.absolute.black}`;
+    return `2px solid ${colors.absolute.black}`;
   }
 
   const baseStyle = '1px solid ';
 
-  return baseStyle + (theme === 'dark' ? 'transparent' : colors.light.text.subtle);
+  return baseStyle + (theme === 'dark' ? 'transparent' : colors.text.subtle);
 }
 
 function getHoverBackgroundColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return colors.light.text.prominent;
+    return colors.text.prominent;
   }
 
   if (theme === 'dark') {
-    return colors.light.primary.main;
+    return colors.primary.main;
   }
 
-  return colors.light.background.darken;
+  return colors.background.darken;
 }
 
 function getHoverColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return colors.light.background.main;
+    return colors.background.main;
   }
 
-  return colors.light.text.prominent;
+  return colors.text.prominent;
 }
 
 function getHoverBorderColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return colors.light.absolute.black;
+    return colors.absolute.black;
   }
 
-  return theme === 'dark' ? colors.light.primary.main : colors.light.border.prominent;
+  return theme === 'dark' ? colors.primary.main : colors.border.prominent;
 }
 
 export {

@@ -37,7 +37,7 @@ function Tag({
         enableClose
         && (
           <div css={[closeIconContainerStyle(theme), css]} onClick={onClose} role="presentation">
-            <CloseButton stroke={theme === 'default' ? colors.light.text.moderate : colors.light.primary.main} />
+            <CloseButton stroke={theme === 'default' ? colors.text.moderate : colors.primary.main} />
           </div>
         )
       }

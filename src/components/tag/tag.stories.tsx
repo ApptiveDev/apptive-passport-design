@@ -39,7 +39,7 @@ export const EnableCloseStyled: Story = {
     icon,
     enableClose: true,
     css: css`
-        background-color: ${colors.light.primary.passive};
+        background-color: ${colors.primary.passive};
         border: none;
       `,
     onClose: () => { console.log('close'); },

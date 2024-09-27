@@ -55,15 +55,15 @@ const tagIconStyle = css`
 `;
 
 function getBorderStyle(theme?: TagTheme) {
-  return theme === 'primary' ? 'transparent' : colors.light.border.subtle;
+  return theme === 'primary' ? 'transparent' : colors.border.subtle;
 }
 
 function getBackgroundColor(theme?: TagTheme) {
-  return theme === 'primary' ? colors.light.primary.passive : 'transparent';
+  return theme === 'primary' ? colors.primary.passive : 'transparent';
 }
 
 function getTextColor(theme?: TagTheme) {
-  return theme === 'primary' ? colors.light.primary.main : colors.light.text.prominent;
+  return theme === 'primary' ? colors.primary.main : colors.text.prominent;
 }
 
 export {

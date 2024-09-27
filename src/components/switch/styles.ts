@@ -15,7 +15,7 @@ function switchWrapperStyle() {
     css`
       width: 42px;
       height: 24px;
-      border: 1px solid ${colors.light.border.subtle};
+      border: 1px solid ${colors.border.subtle};
       background-color: transparent;
       border-radius: ${corner.round};
       position: relative;
@@ -23,7 +23,7 @@ function switchWrapperStyle() {
       box-sizing: border-box;
       
       .switch-checked + & {
-        background-color: ${colors.light.primary.main};
+        background-color: ${colors.primary.main};
         border: 1px solid transparent;
       } 
     `
@@ -33,7 +33,7 @@ function switchWrapperStyle() {
 function switchCircleStyle() {
   return (
     css`
-      background-color: ${colors.light.absolute.black};
+      background-color: ${colors.absolute.black};
       border-radius: 100%;
       width: 14px;
       height: 14px;
