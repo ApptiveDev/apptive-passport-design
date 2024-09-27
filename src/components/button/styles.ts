@@ -1,4 +1,4 @@
-import colors from '@styles/colors';
+import colorTheme from '@styles/colors';
 import { css } from '@emotion/react';
 import { ButtonTheme } from '@/types';
 
@@ -11,7 +11,7 @@ function buttonStyle(theme: ButtonTheme) {
       outline: none;
       padding: 10px 18px;
       border-radius: 100px;
-      color: ${theme === 'dark' ? colors.primary.main : colors.text.prominent};
+      color: ${theme === 'dark' ? colorTheme.primary.main : colorTheme.text.prominent};
       border: ${getBorderStyle(theme)};
       background-color: ${getBackgroundColor(theme)};
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -37,48 +37,48 @@ function getBackgroundColor(theme: ButtonTheme) {
   }
 
   if (theme === 'dark') {
-    return colors.text.prominent;
+    return colorTheme.text.prominent;
   }
 
-  return colors.background.main;
+  return colorTheme.background.main;
 }
 
 function getBorderStyle(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return `2px solid ${colors.absolute.black}`;
+    return `2px solid ${colorTheme.absolute.black}`;
   }
 
   const baseStyle = '1px solid ';
 
-  return baseStyle + (theme === 'dark' ? 'transparent' : colors.text.subtle);
+  return baseStyle + (theme === 'dark' ? 'transparent' : colorTheme.text.subtle);
 }
 
 function getHoverBackgroundColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return colors.text.prominent;
+    return colorTheme.text.prominent;
   }
 
   if (theme === 'dark') {
-    return colors.primary.main;
+    return colorTheme.primary.main;
   }
 
-  return colors.background.darken;
+  return colorTheme.background.darken;
 }
 
 function getHoverColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return colors.background.main;
+    return colorTheme.background.main;
   }
 
-  return colors.text.prominent;
+  return colorTheme.text.prominent;
 }
 
 function getHoverBorderColor(theme: ButtonTheme) {
   if (theme === 'light-outlined') {
-    return colors.absolute.black;
+    return colorTheme.absolute.black;
   }
 
-  return theme === 'dark' ? colors.primary.main : colors.border.prominent;
+  return theme === 'dark' ? colorTheme.primary.main : colorTheme.border.prominent;
 }
 
 export {
