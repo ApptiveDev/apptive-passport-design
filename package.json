@@ -14,11 +14,12 @@
     "build-src": "vite build",
     "build-dts": "tsc --project tsconfig.dts.json",
     "build": "yarn build-src && yarn build-dts",
+    "test": "vitest run",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ci": "yarn lint && yarn build"
+    "ci": "yarn test && yarn lint && yarn build"
   },
   "exports": {
     ".": {
