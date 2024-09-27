@@ -30,9 +30,10 @@
       "@styles/*": ["styles/*"],
       "@contexts/*": ["contexts/*"],
       "@assets/*": ["assets/*"],
-      "@constants/*": ["constants/*"]
+      "@constants/*": ["constants/*"],
+      "@providers/*": ["providers/*"],
     }
   },
   "include": ["src"],
-  "exclude": ["**/*.stories.{ts|tsx}"],
+  "exclude": ["**/*.{stories|test}.{ts|tsx}"],
 }
