@@ -2,7 +2,7 @@ export type ButtonTheme = 'default' | 'dark' | 'light-outlined';
 
 export type TagTheme = 'default' | 'primary';
 
-export type Theme = {
+export type Colors = {
   primary: {
     main: string;
     lighten: string;
@@ -40,8 +40,22 @@ export type Theme = {
   };
 };
 
-export type ThemeSlice<T extends keyof Theme> = Partial<Theme[T]>;
+export type Corners = {
+  small: string;
+  medium: string;
+  big: string;
+  round: string;
+};
 
-export type ThemeExtend = {
-  [K in keyof Theme]: ThemeSlice<K>;
+export type Theme = {
+  colors: Colors;
+  corners: Corners;
+};
+
+export type Sliced<T> = {
+  [K in keyof T]?: Partial<T[K]>
+};
+
+export type ExtendedTheme = {
+  [K in keyof Theme]?: Sliced<Theme[K]>;
 };

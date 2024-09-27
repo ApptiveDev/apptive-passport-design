@@ -1,6 +1,6 @@
-import { Theme } from '@/types';
+import { Colors } from '@/types';
 
-const colors: Theme = {
+const colorTheme: Colors = {
   primary: {
     main: '#FF9433',
     lighten: '#FFA14D',
@@ -38,4 +38,4 @@ const colors: Theme = {
   },
 };
 
-export default colors;
+export default colorTheme;
