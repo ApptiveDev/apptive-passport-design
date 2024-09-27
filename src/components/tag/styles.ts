@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
-import corner from '@styles/corner';
-import colors from '@styles/colors';
+import corners from 'styles/corners';
+import colorTheme from '@styles/colors';
 import { TagTheme } from '@/types';
 
 function tagStyle(enableClose: boolean, theme?: TagTheme) {
-  const rightCorner = enableClose ? corner.small : corner.round;
+  const rightCorner = enableClose ? corners.small : corners.round;
 
   return (
     css`
@@ -16,7 +16,7 @@ function tagStyle(enableClose: boolean, theme?: TagTheme) {
       align-items: center;
       gap: 8px;
       flex-grow: 0;
-      border-radius: ${corner.round} ${rightCorner} ${rightCorner} ${corner.round};
+      border-radius: ${corners.round} ${rightCorner} ${rightCorner} ${corners.round};
       border: 2px solid ${getBorderStyle(theme)};
       background-color: ${getBackgroundColor(theme)};
       color: ${getTextColor(theme)};
@@ -35,7 +35,7 @@ const tagContainerStyle = css`
 function closeIconContainerStyle(theme?: TagTheme) {
   return (
     css`
-      border-radius: ${corner.small} ${corner.round} ${corner.round} ${corner.small};
+      border-radius: ${corners.small} ${corners.round} ${corners.round} ${corners.small};
       border: 2px solid ${getBorderStyle(theme)};
       display: flex;
       align-items: center;
@@ -55,15 +55,15 @@ const tagIconStyle = css`
 `;
 
 function getBorderStyle(theme?: TagTheme) {
-  return theme === 'primary' ? 'transparent' : colors.border.subtle;
+  return theme === 'primary' ? 'transparent' : colorTheme.border.subtle;
 }
 
 function getBackgroundColor(theme?: TagTheme) {
-  return theme === 'primary' ? colors.primary.passive : 'transparent';
+  return theme === 'primary' ? colorTheme.primary.passive : 'transparent';
 }
 
 function getTextColor(theme?: TagTheme) {
-  return theme === 'primary' ? colors.primary.main : colors.text.prominent;
+  return theme === 'primary' ? colorTheme.primary.main : colorTheme.text.prominent;
 }
 
 export {

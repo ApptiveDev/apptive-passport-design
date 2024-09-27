@@ -1,24 +1,24 @@
 import { css } from '@emotion/react';
-import colors from '@styles/colors';
-import corner from '@styles/corner';
+import colorTheme from '@styles/colors';
+import corners from 'styles/corners';
 
 const textAreaStyle = css`
   padding: 10px;
-  border-radius: ${corner.small};
-  border: 1px solid ${colors.border.subtle};
+  border-radius: ${corners.small};
+  border: 1px solid ${colorTheme.border.subtle};
   width: 100%;
   box-sizing: border-box;
   font-size: 15px;
   
   &:focus {
     outline: none;
-    border: 1px solid ${colors.border.prominent}
+    border: 1px solid ${colorTheme.border.prominent}
   }
 `;
 
 const labelStyle = css`
   font-size: 13px;
-  color: ${colors.text.moderate};
+  color: ${colorTheme.text.moderate};
   & p {
     margin-bottom: 5px;
     margin-top: 0;

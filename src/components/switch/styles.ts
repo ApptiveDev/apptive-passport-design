@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
-import colors from '@styles/colors';
-import corner from '@styles/corner';
+import colorTheme from '@styles/colors';
+import corners from 'styles/corners';
 
 const switchInputStyle = css`
   appearance: none;
@@ -15,15 +15,15 @@ function switchWrapperStyle() {
     css`
       width: 42px;
       height: 24px;
-      border: 1px solid ${colors.border.subtle};
+      border: 1px solid ${colorTheme.border.subtle};
       background-color: transparent;
-      border-radius: ${corner.round};
+      border-radius: ${corners.round};
       position: relative;
       transition: 0.2s;
       box-sizing: border-box;
       
       .switch-checked + & {
-        background-color: ${colors.primary.main};
+        background-color: ${colorTheme.primary.main};
         border: 1px solid transparent;
       } 
     `
@@ -33,7 +33,7 @@ function switchWrapperStyle() {
 function switchCircleStyle() {
   return (
     css`
-      background-color: ${colors.absolute.black};
+      background-color: ${colorTheme.absolute.black};
       border-radius: 100%;
       width: 14px;
       height: 14px;

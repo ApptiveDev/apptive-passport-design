@@ -1,20 +1,20 @@
 import { css, CSSObject } from '@emotion/react';
-import corner from '@styles/corner';
-import colors from '@styles/colors';
+import corners from 'styles/corners';
+import colorTheme from '@styles/colors';
 
 function inputStyle(hasIcon?: boolean, enableToggleShow?: boolean): CSSObject {
   return (
     css`
       padding: 10px ${enableToggleShow ? '34px' : '10px'} 10px ${hasIcon ? '34px' : '10px'};
-      border-radius: ${corner.small};
-      border: 1px solid ${colors.border.subtle};
+      border-radius: ${corners.small};
+      border: 1px solid ${colorTheme.border.subtle};
       width: 100%;
       box-sizing: border-box;
       font-size: 15px;
       
       &:focus {
         outline: none;
-        border: 1px solid ${colors.border.prominent}
+        border: 1px solid ${colorTheme.border.prominent}
       }
     `
   );
@@ -40,7 +40,7 @@ const inputContainerStyle = css`
 
 const labelStyle = css`
   font-size: 13px;
-  color: ${colors.text.moderate};
+  color: ${colorTheme.text.moderate};
   & p {
     margin-bottom: 5px;
     margin-top: 0;
