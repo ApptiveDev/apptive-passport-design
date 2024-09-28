@@ -33,6 +33,7 @@ module.exports = {
   'rules': {
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/alt-text': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
     'react/no-unknown-property': ['error', { 'ignore': ['css'] }],
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
