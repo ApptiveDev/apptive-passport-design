@@ -17,18 +17,8 @@ function useTextAreaStyle() {
     }
   `;
 
-  const labelStyle = css`
-    font-size: 13px;
-    color: ${theme.colors.text.moderate};
-    & p {
-      margin-bottom: 5px;
-      margin-top: 0;
-    }
-  `;
-
   return {
     textAreaStyle,
-    labelStyle,
   };
 }
 
