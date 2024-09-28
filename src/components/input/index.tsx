@@ -8,15 +8,10 @@ import {
   useState,
 } from 'react';
 import { CSSObject } from '@emotion/react';
-import {
-  inputContainerStyle,
-  inputIconStyle,
-  inputStyle,
-  labelStyle,
-} from '@components/input/styles';
 import toggleShowIcon from '@assets/icons/eye.svg';
 import toggleHideIcon from '@assets/icons/eye-off.svg';
 import DynamicIcon from '@components/internal/dynamic-icon';
+import useInputStyle from '@components/input/useInputStyle';
 import { generateRandomId } from '@/utils';
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
@@ -32,6 +27,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
 }, ref) => {
   const inputId = useRef(generateRandomId());
   const [isHidden, setIsHidden] = useState(true);
+  const {
+    inputStyle,
+    inputContainerStyle,
+    inputIconStyle,
+    labelStyle,
+  } = useInputStyle({ enableToggleShow, icon });
 
   if (enableToggleShow && type !== 'password') {
     throw new Error('Cannot enable toggle while the type of input is not password');
@@ -51,7 +52,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       <div css={inputContainerStyle}>
         <DynamicIcon icon={icon} css={inputIconStyle()} />
         <input
-          css={[inputStyle(!!icon, enableToggleShow), css]}
+          css={[inputStyle, css]}
           type={type === 'password' && isHidden
             ? 'password'
             : 'text'}
@@ -77,6 +78,8 @@ function ToggleVisibilityIcon({
   isHidden,
   setIsHidden,
 }: ToggleVisibilityIconProps) {
+  const { inputIconStyle } = useInputStyle({ enableToggleShow: true });
+
   return (
     <img
       src={isHidden ? toggleShowIcon : toggleHideIcon}

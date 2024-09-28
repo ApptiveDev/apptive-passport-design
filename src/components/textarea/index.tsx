@@ -4,7 +4,7 @@ import {
   useRef,
 } from 'react';
 import { CSSObject } from '@emotion/react';
-import { labelStyle, textAreaStyle } from '@components/textarea/styles';
+import useTextAreaStyle from '@components/textarea/useTextAreaStyle';
 import { generateRandomId } from '@/utils';
 
 interface TextareaProps extends HTMLAttributes<HTMLTextAreaElement> {
@@ -19,6 +19,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   onChange, label, css, rows = 4, cols = 50, maxLength, ...rest
 }, ref) => {
   const textareaId = useRef(generateRandomId());
+  const { labelStyle, textAreaStyle } = useTextAreaStyle();
 
   return (
     <>

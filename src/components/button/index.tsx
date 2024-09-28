@@ -6,14 +6,14 @@ import { ButtonTheme } from '@/types';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   css?: CSSObject;
-  theme?: ButtonTheme;
+  buttonTheme?: ButtonTheme;
   icon?: ReactNode | string;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
-  children, theme = 'default', css, icon, ...rest
+  children, buttonTheme = 'default', css, icon, ...rest
 }: ButtonProps, ref) => {
-  const { buttonStyle, buttonIconStyle } = useButtonStyle({ buttonTheme: theme });
+  const { buttonStyle, buttonIconStyle } = useButtonStyle({ buttonTheme });
 
   return (
     <button

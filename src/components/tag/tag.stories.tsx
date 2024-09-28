@@ -51,7 +51,7 @@ export const EnableClosePrimary: Story = {
     children: 'label',
     icon,
     enableClose: true,
-    theme: 'primary',
+    tagTheme: 'primary',
     onClose: () => { console.log('close'); },
   },
 };
