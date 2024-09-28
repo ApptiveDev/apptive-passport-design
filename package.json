@@ -14,11 +14,12 @@
     "build-src": "vite build",
     "build-dts": "tsc --project tsconfig.dts.json",
     "build": "yarn build-src && yarn build-dts",
+    "test": "vitest run",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ci": "yarn lint && yarn build"
+    "ci": "yarn test && yarn lint && yarn build"
   },
   "exports": {
     ".": {
@@ -65,7 +66,8 @@
     "vite": "^5.4.1",
     "vite-plugin-dts": "^4.2.1",
     "vite-plugin-svgr": "^4.2.0",
-    "vite-tsconfig-paths": "^5.0.1"
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.1.1"
   },
   "packageManager": "yarn@4.4.1+sha512.f825273d0689cc9ead3259c14998037662f1dcd06912637b21a450e8da7cfeb4b1965bbee73d16927baa1201054126bc385c6f43ff4aa705c8631d26e12460f1",
   "eslintConfig": {

@@ -34,3 +34,9 @@ export const PasswordWithLabel: Story = {
     label: '비밀번호',
   },
 };
+
+export const DisabledInput: Story = {
+  args: {
+    disabled: true,
+  },
+};
