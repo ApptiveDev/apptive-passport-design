@@ -30,5 +30,6 @@ export const CustomStyled: Story = {
         }
       `
     ),
+    defaultChecked: true,
   },
 };

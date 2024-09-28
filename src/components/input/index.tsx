@@ -1,7 +1,8 @@
 import {
-  Dispatch, forwardRef,
-  HTMLAttributes,
+  Dispatch,
+  forwardRef,
   HTMLInputTypeAttribute,
+  InputHTMLAttributes,
   ReactNode,
   SetStateAction,
   useRef,
@@ -12,9 +13,10 @@ import toggleShowIcon from '@assets/icons/eye.svg';
 import toggleHideIcon from '@assets/icons/eye-off.svg';
 import DynamicIcon from '@components/internal/dynamic-icon';
 import useInputStyle from '@components/input/useInputStyle';
+import Label from '@components/label';
 import { generateRandomId } from '@/utils';
 
-interface InputProps extends HTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: string | ReactNode;
   enableToggleShow?: boolean;
   type: HTMLInputTypeAttribute;
@@ -31,7 +33,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     inputStyle,
     inputContainerStyle,
     inputIconStyle,
-    labelStyle,
   } = useInputStyle({ enableToggleShow, icon });
 
   if (enableToggleShow && type !== 'password') {
@@ -43,9 +44,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       {
         label
           ? (
-            <label htmlFor={inputId.current} css={labelStyle}>
-              <p>{label}</p>
-            </label>
+            <Label htmlFor={inputId.current}>
+              {label}
+            </Label>
           )
           : null
       }
