@@ -1,10 +1,10 @@
 {
-  "name": "@apptivedev/apptive-passport-design",
+  "name": "@apptive-dev/apptive-passport-design",
   "version": "0.1.0",
   "type": "module",
-  "main": "dist/apptive-passport-design.umd.cjs",
-  "module": "dist/apptive-passport-design.js",
-  "types:": "dist/index.d.ts",
+  "main": "apptive-passport-design.umd.cjs",
+  "module": "apptive-passport-design.js",
+  "types": "index.d.ts",
   "files": [
     "dist"
   ],
