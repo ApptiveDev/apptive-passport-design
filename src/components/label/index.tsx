@@ -1,11 +1,11 @@
-import useLabelStyle from '@components/label/useLabelStyle';
 import { LabelHTMLAttributes, ReactNode } from 'react';
+import useLabelStyle from './useLabelStyle';
 
-interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
+export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   children?: ReactNode;
 }
 
-function Label({ children, ...rest }: LabelProps) {
+export function Label({ children, ...rest }: LabelProps) {
   const { labelStyle } = useLabelStyle();
 
   return (
@@ -14,5 +14,3 @@ function Label({ children, ...rest }: LabelProps) {
     </label>
   );
 }
-
-export default Label;

@@ -1,20 +1,18 @@
-import { InputHTMLAttributes } from 'react';
+import { forwardRef, InputHTMLAttributes } from 'react';
 import { CSSObject } from '@emotion/react';
-import useCheckboxStyle from '@components/checkbox/useCheckboxStyle';
+import useCheckboxStyle from './useCheckboxStyle';
 
-interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: 'checkbox';
   css?: CSSObject;
   defaultChecked?: boolean;
   checked?: boolean;
 }
 
-function Checkbox({ type = 'checkbox', ...rest }: CheckboxProps) {
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ type = 'checkbox', ...rest }, ref) => {
   const { checkboxStyle } = useCheckboxStyle();
 
   return (
-    <input type={type} css={checkboxStyle} {...rest} />
+    <input type={type} css={checkboxStyle} ref={ref} {...rest} />
   );
-}
-
-export default Checkbox;
+});

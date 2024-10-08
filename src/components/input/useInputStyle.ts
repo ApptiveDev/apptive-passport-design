@@ -1,6 +1,6 @@
-import useTheme from '@hooks/useTheme';
 import { css } from '@emotion/react';
 import { ReactNode } from 'react';
+import { useTheme } from '../../hooks';
 
 interface UseInputStyleProps {
   enableToggleShow?: boolean;

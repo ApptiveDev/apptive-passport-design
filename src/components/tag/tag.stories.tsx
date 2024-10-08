@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Tag from '@components/tag/index';
-import icon from '@assets/icons/tag.svg';
 import { css } from '@emotion/react';
-import colorTheme from '@styles/colors';
+import icon from '../../assets/icons/tag.svg';
+import { Tag } from '.';
+import { colorTheme } from '../../styles';
 
 const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
@@ -51,7 +51,7 @@ export const EnableClosePrimary: Story = {
     children: 'label',
     icon,
     enableClose: true,
-    tagTheme: 'primary',
+    variant: 'primary',
     onClose: () => { console.log('close'); },
   },
 };

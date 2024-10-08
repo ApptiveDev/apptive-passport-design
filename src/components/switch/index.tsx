@@ -2,11 +2,11 @@ import {
   forwardRef, InputHTMLAttributes, useRef,
 } from 'react';
 import { CSSObject } from '@emotion/react';
-import useSwitchHandler from '@components/switch/useSwitchHandler';
-import useSwitchStyle from '@components/switch/useSwitchStyle';
-import { generateRandomId } from '@/utils';
+import useSwitchHandler from './useSwitchHandler';
+import useSwitchStyle from './useSwitchStyle';
+import { generateRandomId } from '../../utils';
 
-interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
   type: 'checkbox';
   wrapperCss?: CSSObject;
   circleCss?: CSSObject;
@@ -14,7 +14,7 @@ interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
   defaultChecked?: boolean;
 }
 
-const Switch = forwardRef<HTMLInputElement, SwitchProps>(({
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(({
   type = 'checkbox', wrapperCss, circleCss, checked, defaultChecked, ...rest
 }, ref) => {
   const inputIdRef = useRef(generateRandomId());
@@ -32,5 +32,3 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(({
     </div>
   );
 });
-
-export default Switch;
