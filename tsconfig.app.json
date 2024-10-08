@@ -20,20 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "jsxImportSource": "@emotion/react",
-
-    "baseUrl": "src",
-    "paths": {
-      "@/*": ["*"],
-      "@components/*": ["components/*"],
-      "@hooks/*": ["hooks/*"],
-      "@utils/*": ["utils/*"],
-      "@styles/*": ["styles/*"],
-      "@contexts/*": ["contexts/*"],
-      "@assets/*": ["assets/*"],
-      "@constants/*": ["constants/*"],
-      "@providers/*": ["providers/*"],
-    }
   },
   "include": ["src"],
-  "exclude": ["**/*.{stories|test}.{ts|tsx}"],
+  "exclude": ["**/*.{stories,test}.{ts,tsx}"],
 }
