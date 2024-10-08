@@ -22,9 +22,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apptive-dev/apptive-passport-design@workspace:.":
+"@apptive/apptive-passport-design@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@apptive-dev/apptive-passport-design@workspace:."
+  resolution: "@apptive/apptive-passport-design@workspace:."
   dependencies:
     "@chromatic-com/storybook": "npm:1.9.0"
     "@emotion/react": "npm:^11.13.3"
