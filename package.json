@@ -1,10 +1,10 @@
 {
   "name": "@apptive-dev/apptive-passport-design",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
-  "main": "apptive-passport-design.umd.cjs",
-  "module": "apptive-passport-design.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -22,18 +22,18 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/apptive-passport-design.js",
-      "require": "./dist/apptive-passport-design.umd.cjs"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
-    "@emotion/sheet": "^1.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",
+    "@emotion/sheet": "^1.4.0",
     "@eslint/js": "^9.9.0",
     "@storybook/addon-essentials": "^8.3.1",
     "@storybook/addon-interactions": "^8.3.1",

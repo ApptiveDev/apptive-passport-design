@@ -1,15 +1,15 @@
 import { InputHTMLAttributes, MouseEvent } from 'react';
 import { CSSObject } from '@emotion/react';
-import useRadioStyle from '@components/radio/useRadioStyle';
+import useRadioStyle from './useRadioStyle';
 
-interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   type?: 'radio';
   css?: CSSObject;
   defaultChecked?: boolean;
   checked?: boolean;
 }
 
-function Radio({ type = 'radio', ...rest }: RadioProps) {
+export function Radio({ type = 'radio', ...rest }: RadioProps) {
   const { radioStyle } = useRadioStyle();
 
   const onClick = (e: MouseEvent) => {
@@ -21,5 +21,3 @@ function Radio({ type = 'radio', ...rest }: RadioProps) {
     <input type={type} css={radioStyle} onClick={onClick} {...rest} />
   );
 }
-
-export default Radio;

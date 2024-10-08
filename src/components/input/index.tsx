@@ -9,23 +9,23 @@ import {
   useState,
 } from 'react';
 import { CSSObject } from '@emotion/react';
-import toggleShowIcon from '@assets/icons/eye.svg';
-import toggleHideIcon from '@assets/icons/eye-off.svg';
-import DynamicIcon from '@components/internal/dynamic-icon';
-import useInputStyle from '@components/input/useInputStyle';
-import Label from '@components/label';
-import { generateRandomId } from '@/utils';
+import toggleShowIcon from '../../assets/icons/eye.svg';
+import toggleHideIcon from '../../assets/icons/eye-off.svg';
+import DynamicIcon from '../internal/dynamic-icon';
+import useInputStyle from './useInputStyle';
+import { Label } from '../label';
+import { generateRandomId } from '../../utils';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: string | ReactNode;
   enableToggleShow?: boolean;
-  type: HTMLInputTypeAttribute;
+  type?: HTMLInputTypeAttribute;
   label?: string;
   css?: CSSObject;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({
-  icon, enableToggleShow, type, label, css, ...rest
+export const Input = forwardRef<HTMLInputElement, InputProps>(({
+  icon, enableToggleShow, type = 'text', label, css, ...rest
 }, ref) => {
   const inputId = useRef(generateRandomId());
   const [isHidden, setIsHidden] = useState(true);
@@ -91,5 +91,3 @@ function ToggleVisibilityIcon({
     />
   );
 }
-
-export default Input;

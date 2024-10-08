@@ -1,5 +1,5 @@
-import useTheme from '@hooks/useTheme';
 import { css } from '@emotion/react';
+import { useTheme } from '../../hooks';
 
 function useRadioStyle() {
   const theme = useTheme();

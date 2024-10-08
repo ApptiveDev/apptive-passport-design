@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Switch from '@components/switch';
 import { css } from '@emotion/react';
+import { Switch } from '.';
 
 const meta: Meta<typeof Switch> = {
   title: 'Components/Switch',

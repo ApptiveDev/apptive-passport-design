@@ -1,11 +1,11 @@
 import { ReactNode, SelectHTMLAttributes, useRef } from 'react';
-import Label from '@components/label';
 import { CSSObject } from '@emotion/react';
-import DynamicIcon from '@components/internal/dynamic-icon';
-import useSelectStyle from '@components/select/useSelectStyle';
-import { generateRandomId } from '@/utils';
+import { Label } from '../label';
+import DynamicIcon from '../internal/dynamic-icon';
+import useSelectStyle from './useSelectStyle';
+import { generateRandomId } from '../../utils';
 
-interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   children?: ReactNode;
   icon?: string | ReactNode;
   label?: string;
@@ -13,7 +13,7 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   css?: CSSObject;
 }
 
-function Select({
+export function Select({
   children, icon, label, placeholder, css, ...rest
 }: SelectProps) {
   const selectId = useRef(generateRandomId());
@@ -30,5 +30,3 @@ function Select({
     </div>
   );
 }
-
-export default Select;
