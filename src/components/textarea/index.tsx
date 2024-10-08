@@ -4,11 +4,11 @@ import {
   useRef,
 } from 'react';
 import { CSSObject } from '@emotion/react';
-import useTextAreaStyle from '@components/textarea/useTextAreaStyle';
-import Label from '@components/label';
-import { generateRandomId } from '@/utils';
+import useTextAreaStyle from './useTextAreaStyle';
+import { Label } from '../label';
+import { generateRandomId } from '../../utils';
 
-interface TextareaProps extends HTMLAttributes<HTMLTextAreaElement> {
+export interface TextAreaProps extends HTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   css?: CSSObject;
   rows?: number;
@@ -16,7 +16,7 @@ interface TextareaProps extends HTMLAttributes<HTMLTextAreaElement> {
   maxLength?: number;
 }
 
-const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
   onChange, label, css, rows = 4, cols = 50, maxLength, ...rest
 }, ref) => {
   const textareaId = useRef(generateRandomId());
@@ -45,5 +45,3 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
     </>
   );
 });
-
-export default TextArea;

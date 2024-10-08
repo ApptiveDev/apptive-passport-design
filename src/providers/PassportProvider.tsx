@@ -1,13 +1,12 @@
 import { createContext, ReactNode, useMemo } from 'react';
-import defaultTheme from '@styles/theme';
-import { ExtendedTheme, Theme } from '@/types';
-import { mergeTheme } from '@/utils';
+import { defaultTheme, type ExtendedTheme, type Theme } from '../styles';
+import { mergeTheme } from '../utils';
 
 export interface PassportContextData {
   theme: Theme;
 }
 
-interface PassportContextProps {
+export interface PassportContextProps {
   extendedTheme?: ExtendedTheme;
   children?: ReactNode;
 }

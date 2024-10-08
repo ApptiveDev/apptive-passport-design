@@ -1,10 +1,7 @@
 import { useContext } from 'react';
-import {
-  PassportContext,
-  PassportContextData,
-} from '@providers/PassportProvider';
+import { PassportContext, type PassportContextData } from '../providers';
 
-function useTheme() {
+export function useTheme() {
   const { theme } = useContext<PassportContextData>(PassportContext);
 
   return theme;

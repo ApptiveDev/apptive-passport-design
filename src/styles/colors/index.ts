@@ -1,6 +1,42 @@
-import { Colors } from '@/types';
+export type Colors = {
+  primary: {
+    main: string;
+    lighten: string;
+    darken: string;
+    passive: string;
+  };
+  text: {
+    prominent: string;
+    moderate: string;
+    subtle: string;
+  };
+  background: {
+    main: string;
+    lighten: string;
+    darken: string;
+  };
+  border: {
+    subtle: string;
+    prominent: string;
+  };
+  absolute: {
+    black: string;
+    white: string;
+  };
+  other: {
+    link: string;
+    success: string;
+    warn: string;
+    error: string;
+  };
+  brand: {
+    background: string;
+    text: string;
+    primary: string;
+  };
+};
 
-const colorTheme: Colors = {
+export const colorTheme: Colors = {
   primary: {
     main: '#FF9433',
     lighten: '#FFA14D',
@@ -37,5 +73,3 @@ const colorTheme: Colors = {
     primary: '#FF7900',
   },
 };
-
-export default colorTheme;

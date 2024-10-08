@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Select from '@components/select';
-import eye from '@assets/icons/eye.svg';
+import eye from '../../assets/icons/eye.svg';
+import { Select } from '.';
 
 const meta: Meta<typeof Select> = {
   title: 'Components/Select',

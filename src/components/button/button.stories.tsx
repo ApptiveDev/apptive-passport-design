@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button from '@components/button';
-import icon from '@assets/icons/eye.svg';
+import icon from '../../assets/icons/eye.svg';
+import { Button } from '.';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   argTypes: {
 
-    buttonTheme: {
+    variant: {
       control: 'radio',
       options: ['default', 'dark', 'light-outlined'],
     },
@@ -25,14 +25,14 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    buttonTheme: 'default',
+    variant: 'default',
     children: 'Default Button',
   },
 };
 
 export const WithIcon: Story = {
   args: {
-    buttonTheme: 'dark',
+    variant: 'dark',
     children: 'Dark Button',
     icon,
   },
@@ -40,7 +40,7 @@ export const WithIcon: Story = {
 
 export const CustomStyled: Story = {
   args: {
-    buttonTheme: 'default',
+    variant: 'default',
     children: 'Custom Styled Button',
     css: {
       backgroundColor: 'lightblue',
