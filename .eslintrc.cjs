@@ -6,7 +6,7 @@ module.exports = {
   'extends': [
     'airbnb', 'airbnb/hooks', 'airbnb-typescript'
   ],
-  'ignorePatterns': ['node_modules/', 'dist/', '*.cjs', '*.mjs', '*.config.ts'],
+  'ignorePatterns': ['node_modules/', 'dist/', '*.cjs', '*.mjs', '*.config.ts', '*.stories.{ts,tsx}', '*.test.{ts,tsx}'],
   'overrides': [
     {
       'env': {
